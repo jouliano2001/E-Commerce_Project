@@ -1,0 +1,202 @@
+.registerContainer {
+  display: flex;
+  width: 60vw;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.box {
+  position: relative;
+  height: 95vh;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 20px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  transition: 0.5s;
+  transform: translateY(-50px);
+  animation: slideIn 0.8s ease forwards, glowEffect 3s infinite alternate;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateY(-50px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes glowEffect {
+  from { box-shadow: 0 0 15px rgba(255, 255, 255, 0.2); }
+  to { box-shadow: 0 0 40px rgba(69, 243, 255, 0.9); }
+}
+
+.login {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.header {
+  font-size: 28px;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  overflow: hidden;
+}
+
+.waveAnimation {
+  display: inline-block;
+  animation: wave 1.5s infinite;
+}
+
+@keyframes wave {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+.inputField {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-radius: 30px;
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+  outline: none;
+  transition: 0.4s;
+}
+
+.inputField:focus {
+  border-color: #45f3ff;
+  box-shadow: 0 0 10px #45f3ff, 0 0 20px #45f3ff;
+  transform: scale(1.05);
+}
+
+.submitButton {
+  background: #45f3ff;
+  cursor: pointer;
+  transition: 0.5s;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.submitButton:hover {
+  background: #36c1e1;
+  box-shadow: 0 0 20px #45f3ff, 0 0 60px #45f3ff;
+  transform: scale(1.1);
+}
+
+.linkGroup {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.link {
+  color: #45f3ff;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s;
+}
+
+.link:hover {
+  color: #36c1e1;
+  text-decoration: underline;
+}
+
+.errorMessage {
+  color: #ff4d4d;
+  font-size: 14px;
+  margin-bottom: 10px;
+  font-weight: 500;
+}
+.socialDivider {
+  display: flex;
+  align-items: center;
+  margin: 20px 0;
+}
+
+.dividerLine {
+  flex: 1;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+.dividerText {
+  padding: 0 10px;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 14px;
+}
+
+.socialButtons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: 100%;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 12px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.socialButton:hover {
+  transform: translateY(-2px);
+}
+
+.socialIcon {
+  font-size: 20px;
+}
+
+.google {
+  background: white;
+  color: #444;
+}
+
+.google:hover {
+  background: #f1f1f1;
+}
+
+.apple {
+  background: #000;
+  color: white;
+}
+
+.apple:hover {
+  background: #222;
+}
+
+.github {
+  background: #333;
+  color: white;
+}
+
+.github:hover {
+  background: #444;
+}

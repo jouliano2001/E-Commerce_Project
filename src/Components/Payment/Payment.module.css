@@ -1,0 +1,386 @@
+@import "tailwindcss";
+@plugin "flowbite-react/plugin/tailwindcss";
+@source "../.flowbite-react/class-list.json";
+@plugin "daisyui";
+@import "flowbite/src/themes/default";
+
+.paymentContainer {
+  font-family: 'Source Sans Pro', sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  position: relative;
+}
+
+.cardForm {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto;
+  position: relative;
+  padding-top: 200px;
+}
+
+.cardFormInner {
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  position: relative;
+}
+
+.cardList {
+  position: absolute;
+  top: -180px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 380px;
+  z-index: 10;
+}
+
+
+.cardItem {
+  width: 380px;
+  height: 220px;
+  margin-top: 190px;
+  position: relative;
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  transition: transform 0.6s ease;
+}
+
+.cardSide {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform-style: preserve-3d;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 20px 60px rgba(14, 42, 90, 0.3);
+  transition: transform 0.6s ease;
+}
+
+.cardSideFront {
+  transform: rotateY(0deg);
+  z-index: 2;
+}
+
+.cardSideBack {
+  transform: rotateY(180deg);
+  z-index: 1;
+}
+
+.cardItem.active {
+  transform: rotateY(180deg);
+}
+
+.cardItem.active .cardSideFront {
+  z-index: 1;
+}
+
+.cardItem.active .cardSideBack {
+  z-index: 2;
+}
+
+.cardCover {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.cardBg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cardWrapper {
+  padding: 25px 15px;
+  position: relative;
+  z-index: 4;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardTop {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.cardChip {
+  width: 50px;
+}
+
+.cardType {
+  height: 40px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cardTypeImg {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.cardNumber {
+  font-size: 22px;
+  font-weight: 900;
+  margin-bottom: 20px;
+  letter-spacing: 2px;
+  font-family: 'Source Code Pro', monospace;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.cardContent {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.cardInfo {
+  flex: 1;
+}
+
+.cardHolderLabel {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.cardName {
+  font-size: 16px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+}
+
+.cardDate {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.cardDateLabel {
+  font-size: 12px;
+  opacity: 0.8;
+  margin-bottom: 5px;
+}
+
+.cardDateValue {
+  font-size: 16px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.cardBand {
+  background: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 40px;
+  margin-top: 30px;
+}
+
+.cardCvvContainer {
+  padding: 15px;
+  text-align: right;
+  z-index: 10;
+}
+
+.cardCvvLabel {
+  font-size: 14px;
+  margin-bottom: 5px;
+  z-index: 10;
+}
+
+.cardCvvBand {
+  height: 40px;
+  background: #fff;
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10px;
+  z-index: 10;
+  color: #1a3b5d;
+  font-size: 16px;
+  border-radius: 4px;
+  font-family: 'Source Code Pro', monospace;
+}
+
+.cardInput {
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.cardInputLabel {
+  font-size: 14px;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #1a3b5d;
+  display: block;
+}
+
+.error {
+  position: absolute;
+  bottom: -18px;
+  left: 0;
+  color: #ff4d4d;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.cardInputField {
+  width: 100%;
+  height: 50px;
+  border-radius: 8px;
+  border: 1px solid #ced6e0;
+  font-size: 16px;
+  padding: 0 15px;
+  background: none;
+  color: #1a3b5d;
+  transition: all 0.3s ease;
+}
+
+.cardInputField:focus {
+  border-color: #3d9cff;
+  box-shadow: 0 0 0 2px rgba(61, 156, 255, 0.2);
+  outline: none;
+}
+
+.cardFormRow {
+  display: flex;
+  gap: 15px;
+}
+
+.cardFormCol {
+  flex: 1;
+}
+
+.cvvCol {
+  max-width: 150px;
+}
+
+.cardFormGroup {
+  display: flex;
+  flex-direction: column;
+}
+
+.selectGroup {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.cardSelect {
+  flex: 1;
+  min-width: 120px;
+  appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+  background-repeat: no-repeat;
+  background-position: right 10px center;
+  background-size: 16px;
+  padding-right: 30px;
+}
+
+.submitButton {
+  margin-top: 30px;
+  background: #6e45e2;
+  color: white;
+  border: none;
+  padding: 15px 0;
+  font-size: 18px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submitButton:hover {
+  background: #1a52b5;
+}
+
+@media (max-width: 768px) {
+  .cardFormInner {
+    padding: 30px;
+    margin-top: 150px;
+  }
+
+  .cardItem {
+    width: 340px;
+    height: 200px;
+  }
+
+  .cardNumber {
+    font-size: 20px;
+  }
+
+  .cardFormRow {
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .cvvCol {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .cardFormInner {
+    padding: 20px;
+    margin-top: 120px;
+  }
+
+  .cardItem {
+    width: 300px;
+    height: 180px;
+    perspective: none;
+    transform: none !important;
+  }
+
+  .cardItem.active {
+    transform: none !important;
+  }
+
+  .cardNumber {
+    font-size: 18px;
+    margin-bottom: 15px;
+  }
+
+  .cardTop {
+    margin-bottom: 15px;
+  }
+
+  .cardChip {
+    width: 40px;
+  }
+
+  .cardName {
+    font-size: 14px;
+  }
+
+  .cardDateValue {
+    font-size: 14px;
+  }
+
+  .cardBand {
+    height: 35px;
+    margin-top: 20px;
+  }
+
+  .cardCvvBand {
+    height: 35px;
+    margin-bottom: 15px;
+  }
+}
