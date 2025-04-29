@@ -25,8 +25,10 @@ const MainLayout = () => {
   }, [isInView]);
 
   useEffect(() => {
-    window.location.reload();
-  }, []);
+    if (location.pathname !== '/home') {
+      window.location.reload();
+    }
+  }, [location.pathname]);
 
   return (
     <CartWishlistContext>
