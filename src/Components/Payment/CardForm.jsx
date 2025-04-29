@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Card from './Card';
-import styles from './payment.module.css';
+import styles from './Payment.module.css';
 import { useNavigate } from 'react-router-dom';
 
 const CardForm = () => {
