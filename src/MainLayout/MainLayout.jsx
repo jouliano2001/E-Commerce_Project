@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import NavBar from "../Components/NavBar/NavBar";
 import AuthLayout from "../Pages/Auth/AuthLayout";
 import Error from "../Pages/Error/Error";
@@ -24,18 +24,11 @@ const MainLayout = () => {
     }
   }, [isInView]);
 
-  // useEffect(() => {
-  //   if (location.pathname !== '/home') {
-  //     window.location.reload();
-  //   }
-  // }, [location.pathname]);
-
   return (
     <CartWishlistContext>
       <BrowserRouter>
         <Routes>
           <Route path="/auth/*" element={<AuthLayout />} />
-          <Route path="/" element={<Navigate to="/home" />} />
           <Route path="*" element={
             <div className='flex flex-col items-center justify-center align-middle w-[100vw] bg-gray-900 min-h-screen'>
               <motion.section 
