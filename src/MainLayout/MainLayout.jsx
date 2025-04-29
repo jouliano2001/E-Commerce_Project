@@ -24,11 +24,11 @@ const MainLayout = () => {
     }
   }, [isInView]);
 
-  useEffect(() => {
-    if (location.pathname !== '/home') {
-      window.location.reload();
-    }
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   if (location.pathname !== '/home') {
+  //     window.location.reload();
+  //   }
+  // }, [location.pathname]);
 
   return (
     <CartWishlistContext>
