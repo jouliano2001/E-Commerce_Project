@@ -24,6 +24,10 @@ const MainLayout = () => {
     }
   }, [isInView]);
 
+  useEffect(() => {
+    window.location.reload();
+  }, []);
+
   return (
     <CartWishlistContext>
       <BrowserRouter>
