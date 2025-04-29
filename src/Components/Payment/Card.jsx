@@ -1,7 +1,7 @@
 import React from 'react';
 import CardType from './CardType';
 import chip from '../../assets/chip.png';
-import styles from './payment.module.css';
+import styles from './Payment.module.css';
 
 const Card = ({ values }) => {
   const { cardNumber, expMonth, expYear, userName, cardCvv, rotateCard, cardType } = values;
